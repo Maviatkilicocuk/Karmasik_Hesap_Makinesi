@@ -1,0 +1,190 @@
+package Giris;
+import java.util.Scanner;
+public class Karmasik_Hesap_Makinesi {
+
+    static void plus(){
+        int x=1,number,total=0;
+        System.out.println("Not : Sonucu görüp çıkmak için 0 yazınız.");
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.print(x + ". sayıyı giriniz : ");
+            number = input.nextInt();
+            if (number == 0) break;
+            total += number;
+            x += 1;
+
+        }
+        System.out.println("Toplama sonucu = "+total);
+    }
+
+    static void minus(){
+        int x=2,number,total;
+        System.out.println("Not : Sonucu görüp çıkmak için 0 yazınız.");
+        Scanner input = new Scanner(System.in);
+        System.out.print("1. sayıyı giriniz :");
+        total = input.nextInt();
+        while (true) {
+            System.out.print(x + ". sayıyı giriniz : ");
+            number = input.nextInt();
+            if (number == 0) break;
+            total -= number;
+            x += 1;
+
+        }
+        System.out.println("Çıkarma sonucu = "+total);
+
+    }
+
+    static void multiple(){
+        int x=1,number,total=1;
+        System.out.println("Not : Sonucu görüp çıkmak için 0 yazınız.");
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.print(x + ". sayıyı giriniz : ");
+            number = input.nextInt();
+            if (number == 0) break;
+            total *= number;
+            x += 1;
+
+        }
+        System.out.println("Çarpma sonucu = "+total);
+
+    }
+
+    static void divide(){
+        int x=1,number,total=1;
+        System.out.println("Not : Sonucu görüp çıkmak için 0 yazınız.");
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.print(x + ". sayıyı giriniz : ");
+            number = input.nextInt();
+            if (number == 0) break;
+            total /= number;
+            x += 1;
+
+        }
+        System.out.println("Çarpma sonucu = "+total);
+
+    }
+
+    static void power(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Taban değeri giriniz :");
+        int base = scan.nextInt();
+        System.out.print("Üs değeri giriniz :");
+        int exponent = scan.nextInt();
+        int result = 1;
+
+        for (int i = 1; i <= exponent; i++) {
+            result *= base;
+        }
+
+        System.out.println("Sonuç : " + result);
+
+    }
+
+    static void fac(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Sayı giriniz :");
+        int n = scan.nextInt();
+        int result = 1;
+
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+
+        System.out.println("Sonuç : " + result);
+
+    }
+    static void mod(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Sayı giriniz :");
+        int number = scan.nextInt();
+        System.out.print("Mod değeri giriniz :");
+        int mode = scan.nextInt();
+
+        int result = number % mode;
+
+
+
+        System.out.println("Sonuç : " + result);
+        }
+
+    static void calc(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("1. kenarı giriniz :");
+        int a = scan.nextInt();
+        System.out.print("2. kenarı giriniz :");
+        int b = scan.nextInt();
+
+        int result1 = 2*(a+b);
+        int result2 = a*b;
+
+
+
+        System.out.println("Çevre : " + result1);
+        System.out.println("Alan : " + result2);
+    }
+
+
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int select;
+
+        String menu = "1- Toplama İşlemi\n"
+                + "2- Çıkarma İşlemi\n"
+                + "3- Çarpma İşlemi\n"
+                + "4- Bölme işlemi\n"
+                + "5- Üslü Sayı Hesaplama\n"
+                + "6- Faktoriyel Hesaplama\n"
+                + "7- Mod Alma\n"
+                + "8- Dikdörtgen Alan ve Çevre Hesabı\n"
+                + "0- Çıkış Yap";
+
+        do {
+            System.out.print("Menüyü görmek için 1, çıkış için başka bir sayı yazınız = ");
+            select = input.nextInt();
+            if (select ==1) {
+                System.out.println(menu);
+                System.out.print("Lütfen yapmak istediğiniz işlemi seçiniz : ");
+                select = input.nextInt();
+            }else break;
+
+
+            switch (select) {
+                case 1:
+                    plus();
+                    break;
+                case 2:
+                    minus();
+                    break;
+                case 3:
+                    multiple();
+                    break;
+                case 4:
+                    divide();
+                    break;
+                case 5:
+                    power();
+                    break;
+                case 6:
+                    fac();
+                    break;
+                case 7:
+                    mod();
+                    break;
+                case 8:
+                    calc();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.print("Yanlış bir değer girdiniz! Lütfen tekrar giriş yapınız.");
+            }
+
+
+        }while (select !=0);
+
+    }
+}
